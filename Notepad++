@@ -1,0 +1,15 @@
+to put a block of text on each new line (like double spacing)
+Make sure EOL conversion is set to windows at:
+Edit EOL Conversion Windows
+Ctrl H > extended mode
+find: \r\n
+replace \n\n
+
+\n means new line
+\r means tab
+\r means return like carrage return
+
+FYA 
+EOL Unix \n
+Windows \r \n
+Mac \r
