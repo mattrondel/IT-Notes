@@ -15,6 +15,6 @@ Windows \r \n
 Mac \r
 
 Compare plugin:
-extract files to:
+extract x64 files to:
 C:\Program Files\Notepad++\plugins\ComparePlugin
 https://github.com/pnedev/comparePlus/releases/tag/v2.0.2
