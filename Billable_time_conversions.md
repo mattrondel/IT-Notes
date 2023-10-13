@@ -1,3 +1,10 @@
+
+updates are underway
+
+https://answers.microsoft.com/en-us/windows/forum/all/screen-stuck-on-updates-are-underway-please-keep/c6c07dee-d4d5-4163-9e08-bc23eb376e45#:~:text=If%20it%20is%20still%20stuck,updates%20will%20install%20or%20rollback.
+
+
+
 Billable time conversions
 
 5 Min = .10
