@@ -1,9 +1,19 @@
-to put a block of text on each new line (like double spacing)
+To put a block of text on each new line (like double spacing)
 Make sure EOL conversion is set to windows at:
 Edit EOL Conversion Windows
 Ctrl H > extended mode
 find: \r\n
 replace \n\n
+
+Find ( from line and remove all charaters to the end of line
+Ctrl + H check Regular Expressions paste in find: \s\(.*$ leave replace blank
+example:
+Before
+1 Roaming Throne (LCI) 258
+1 Sculpting Steel (BRR) 50 #Combo : Support
+After
+1 Roaming Throne
+1 Sculpting Steel
 
 \n means new line
 \r means tab
