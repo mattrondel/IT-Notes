@@ -9,7 +9,7 @@ turn off num lock
 
 Helpful site:
 
-(https://teklager.se/en/knowledge-base/serial-connection-linux-os/)
+https://teklager.se/en/knowledge-base/serial-connection-linux-os/
 
 
 Confirm you are root
