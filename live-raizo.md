@@ -1,6 +1,7 @@
 https://sourceforge.net/projects/live-raizo/
 
-getac boot menu F10
+Getac boot menu 
+> F10
 
 turn off num lock
 
