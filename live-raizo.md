@@ -12,7 +12,8 @@ Helpful site:
 (https://teklager.se/en/knowledge-base/serial-connection-linux-os/)
 
 
-whoami - confirm you are root
+Confirm you are root
+> whoami
 
 https://sourceforge.net/p/live-raizo/wiki/Description_of_v8/
 
