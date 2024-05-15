@@ -3,7 +3,8 @@ https://sourceforge.net/projects/live-raizo/
 getac boot menu F10
 
 turn off num lock
-FN + numlock
+
+> FN + numlock
 
 Helpful site:
 
@@ -13,4 +14,5 @@ Helpful site:
 whoami - confirm you are root
 
 https://sourceforge.net/p/live-raizo/wiki/Description_of_v8/
+
 skip down to "password"
