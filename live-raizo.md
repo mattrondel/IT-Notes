@@ -13,7 +13,7 @@ Helpful site:
 
 
 Confirm you are root
-> whoami
+> whoami or  echo "$USER"
 
 https://sourceforge.net/p/live-raizo/wiki/Description_of_v8/
 
