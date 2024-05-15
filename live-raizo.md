@@ -22,3 +22,7 @@ skip down to "password"
 
 show model number of device:
 > show inventory
+
+
+Model guide
+> https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst2960cx_3650cx/hardware/installation/guide/b_2960cx-3560cx_hig/b_2960cx-3560cx_hig_appendix_0110.html
