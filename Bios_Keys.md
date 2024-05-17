@@ -5,3 +5,6 @@ Getac boot menu
 Bios menu 
 
 > (DEL?)
+
+
+Dell Server specically R710
