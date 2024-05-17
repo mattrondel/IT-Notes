@@ -47,7 +47,8 @@ end
 
 change underlined items for your needs
 
-Bonus to make your life easier:
+
+<ins>Bonus to make your life easier:</ins>
 
 Config t
 
@@ -56,5 +57,7 @@ Line con 0
 Log sync 
 
 End/exit
+
 Line vty 0 15
+
 Log sync
