@@ -17,10 +17,3 @@ https://sourceforge.net/p/live-raizo/wiki/Description_of_v8/
 skip down to "password"
 
 With Raizo 5.10 there is no password so you can simply do a sudo su
-
-show model number of device:
-> show inventory
-
-
-Model guide ws-C3560CX
-> https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst2960cx_3650cx/hardware/installation/guide/b_2960cx-3560cx_hig/b_2960cx-3560cx_hig_appendix_0110.html
