@@ -5,15 +5,15 @@ en
 
 config t
 
-hostname myswitch
+hostname <ins>myswitch</ins>
 
-ip-domain-name mydomain.com
+ip domain-name <ins>mydomain.com</ins>
 
 crypto key generate rsa
 
 2048
 
-line vty 0 15
+line vty <ins>0 15</ins>
 
 transport input ssh
 
@@ -21,19 +21,19 @@ login local
 
 exit
 
-username matt privilege 15 secret cisco
+username <ins>matt</ins> privilege 15 secret <ins>cisco</ins>
 
-vlan 20
+vlan <ins>20</ins>
 
 name laptops
 
 exit
 
-interface vlan 20
+interface vlan <ins>20</ins>
 
 description laptops
 
-ip address <u>10.0.20.1 255.255.255.0 <u>
+ip address <ins>10.0.20.1 255.255.255.0</ins>
 
 no shut
 
@@ -41,7 +41,7 @@ int <ins>gi 1/0/2</ins>
 
 switchport mode access
 
-switchport access vlan 20
+switchport access vlan <ins>20</ins>
 
 end
 
@@ -57,4 +57,4 @@ Log sync
 
 End/exit
 Line vty 0 15
-Log sync 
+Log sync
