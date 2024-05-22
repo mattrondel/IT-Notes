@@ -1,0 +1,9 @@
+OSPF Troubleshooting with Cisco Devices
+
+# debug ip ospf adj
+shut / no shut an ospf interface
+# terminal monitor 
+
+to turn off debug messages
+# terminal no monitor
+# u all
