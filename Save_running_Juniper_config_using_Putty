@@ -1,0 +1,15 @@
+Save running Juniper config using Putty
+
+1. login to device(duh)
+
+2. right click putty title bar > reset terminal 
+
+3. right click putty title bar > clear scroll back
+
+4. press enter 4-5 times
+
+5. type# show configuration | display set | no-more 
+
+6. right click putty title bar > copy all to clipboard
+
+7. paste in notepad or text editor (duh)
