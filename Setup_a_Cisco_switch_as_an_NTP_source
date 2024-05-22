@@ -16,7 +16,7 @@ example:
 
 run CMD as Admin
 w32tm /config /syncfromflags:manual /manualpeerlist:1.2.3.4, 0x8 /reliable:yes
--replace 1.2.3.4 with NTP source IP address
+*Replace 1.2.3.4 with NTP source IP address*
 
 Verify with 
 w32tm /query /status 
