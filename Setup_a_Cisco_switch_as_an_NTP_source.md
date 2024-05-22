@@ -4,6 +4,7 @@ Setup a Cisco switch as an NTP source
 
 > #clock set 11:09:05 06 AUG 2021
 
+
 2. Set timezone daylight savings etc if applicable 
 
 >(config) clock summer-time zone  date date month year
