@@ -1,16 +1,25 @@
 https://sourceforge.net/projects/live-raizo/
 
-turn off num lock
+At the prompt type startx
+
+right click > 
+tools > Text editior
+
+
+Xterm
+
+To turn off num lock
 
 > FN + numlock
+
+to determine output ports available
+ls -l /dev/tty[SU]*
+
+
 
 Helpful site:
 
 https://teklager.se/en/knowledge-base/serial-connection-linux-os/
-
-
-Confirm you are root
-> whoami or  echo "$USER"
 
 https://sourceforge.net/p/live-raizo/wiki/Description_of_v8/
 
