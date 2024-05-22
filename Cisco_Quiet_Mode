@@ -1,0 +1,17 @@
+Cisco Quiet Mode
+
+Quiet-mode is a setting you can implement which denies all connection to the device other than console access.  The quiet-mode access-list are those IPs that are still permitted to access the device during the quiet-mode duration.
+
+ssh connection refused after a default of 5 failed attepts
+
+This ia factory default ACL that needs some configuring since IOS 12.3
+
+check VTY line for the following ACL (+ AUX lines too)
+
+"Access-class "sl_def_acl_in"
+when turned off this acl disappears
+
+show login displays if quiet mode is enabled or not
+
+(config) no login block-for
+removes quiet mode 
