@@ -1,0 +1,35 @@
+Upgrade Cisco IOS
+
+Backup existing config w/ a date 
+copy run flash:
+destination filename: 09-22-21-config.txt
+
+copy file out to your pc
+note: you may have to enable scp server
+(config) ip scp server enable
+
+from your pc run:
+scp username@switchIpaddress:filename.txt .
+Don't forget the period at the end 
+example:
+scp mrondel@10.10.10.1:09-22-2021.txt .
+-note the space and period at the end
+
+verify IOS version before upgrade 
+on switch :
+show version | section 16
+output might look like:
+cisco IOS XE software version 16.09.06 Cisco [Fuji]
+
+Copy IOS file from a windows PC
+scp IOS-filename.bin username@swichIP:IOSFilename.bin
+note username is the username used locally on the switch
+Example:
+scp C3900e-universalk9-mz.spa.155.bin mrondel@.10.10.10.1:C3900e-universalk9-mz.spa.155.bin
+
+Install IOS Upgrade on the switch:
+install add file flash:NewIOSVersion.bin activate commit
+
+after the switch comes back up after a reboot run on the switch :
+show version | section 16
+output should display the new version 
