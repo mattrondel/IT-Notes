@@ -13,6 +13,8 @@ example:
 *google DST in your area*
 
 
+
+
 ***Set your AD TO point to NTP source***
 
 run CMD as Admin
