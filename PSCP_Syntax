@@ -1,0 +1,14 @@
+PSCP Syntax
+
+enable SCP first on a Cisco device
+config t
+ip scp server enable
+
+pscp -scp filename.bin username@IPaddress:Filename.bin
+
+
+
+PSCP (PuTTY Secure Copy Protocol) is a command-line tool for transferring files and folders from a Windows computer to a Linux computer.
+
+to get latest version of PSCP
+https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
