@@ -2,7 +2,7 @@ Setup a Cisco switch as an NTP source
 
 1 .Set date and time
 
-> #clock set 11:09:05 06 AUG 2021
+> # clock set 11:09:05 06 AUG 2021
 
 2. Set timezone daylight savings etc if applicable 
 
