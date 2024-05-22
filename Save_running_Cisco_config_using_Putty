@@ -1,0 +1,19 @@
+Save running Cisco config using Putty
+
+1. login to device(duh)
+
+2. type# term length 0
+
+3. right click putty title bar > reset terminal 
+
+4. right click putty title bar > clear scroll back
+
+5. press enter 4-5 times
+
+6. type# show run 
+
+7. right click putty title bar > copy all to clipboard
+
+8. paste in notepad or text editor (duh)
+
+9. type terminal length 24
