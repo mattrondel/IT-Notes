@@ -6,4 +6,4 @@ replace the above date with your needs
 
 verify your work:
 
-> # show clock
+> #show clock
