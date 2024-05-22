@@ -13,7 +13,7 @@ example:
 *google DST in your area*
 
 
-** Set your AD TO point to NTP source **
+**Set your AD TO point to NTP source**
 
 run CMD as Admin
 >w32tm /config /syncfromflags:manual /manualpeerlist:1.2.3.4, 0x8 /reliable:yes
