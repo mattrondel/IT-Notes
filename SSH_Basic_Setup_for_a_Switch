@@ -1,0 +1,64 @@
+
+** From an out of the box **
+
+en
+
+config t
+
+hostname myswitch
+
+ip domain-name mydomain.com
+
+crypto key generate rsa
+
+2048
+
+line vty 0 15
+
+transport input ssh
+
+login local
+
+exit
+
+username matt privilege 15 secret cisco
+
+vlan 20
+
+name laptops
+
+exit
+
+interface vlan 20
+
+description laptops
+
+ip address 10.0.20.1 255.255.255.0
+
+no shut
+
+int gi 1/0/2
+
+switchport mode access
+
+switchport access vlan 20
+
+end
+
+change underlined items for your needs
+
+
+
+Bonus to make your life easier:
+
+Config t
+
+Line con 0
+
+Log sync 
+
+End/exit
+
+Line vty 0 15
+
+Log sync
