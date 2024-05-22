@@ -12,9 +12,6 @@ example:
 >(config) clock summer-time PDT date 10 March 2013 2:00 3 November 2013 2:00
 *google DST in your area*
 
-
-
-
 ***Set your AD TO point to NTP source***
 
 run CMD as Admin
