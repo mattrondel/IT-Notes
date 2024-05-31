@@ -4,6 +4,11 @@ torx t20 bit
 
 T8 torx
 
+https://www.reddit.com/r/originalxbox/comments/17qvbgw/does_anyone_have_any_thoughts_on_these_phillips/
+
+
+https://www.ebay.com/p/1108199476
+
 https://youtu.be/8p15A1iDA4w?si=i2VlCoaQGfE88X2B
 
 One Stop shop of IT notes when a notebook isn't handy
