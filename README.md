@@ -1,3 +1,6 @@
+https://www.tinker-mods.com/buy-replacement-parts/original-xbox/disc-drives/original-xbox-disc-drive-replacement.php
+
+
 One Stop shop of IT notes when a notebook isn't handy
 
 add notes
