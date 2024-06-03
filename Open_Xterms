@@ -1,0 +1,18 @@
+Open X terms
+
+open xterms
+#! /bin/bash
+horzoffset=200
+vertoffset=500
+columns=75
+#
+gnome-terminal
+--window --title ""Host name Here --geometry
+98x13 +0 +0 --command 'ssh hostname here'
+
+98 x 13 +0 +248 -- NameOfServer1
+98 x 11 +0 +496 -- NameOfServer2
+98 x 11 +0 +744 -- NameOfServer3
+98 x 13 +1115 +0 -- NameOfServer4
+98 x 13 +1115 +248 -- NameOfServer5
+98 x 13 +805 +496 -- NameOfServer6
