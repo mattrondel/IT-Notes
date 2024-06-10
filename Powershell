@@ -1,3 +1,7 @@
 Export-WindowsDriver
 
+try:
+
+Export-WindowsDriver -Online -Destination d:\drivers
+
 https://learn.microsoft.com/en-us/powershell/module/dism/export-windowsdriver?view=windowsserver2022-ps
