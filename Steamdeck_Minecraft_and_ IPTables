@@ -1,9 +1,9 @@
 
-fyi: man pages seem to not exist on a steam deck but --help is present
-fyi: if you need a text editor vim is installed (is nano?)
-fyi: steamdeck is running what appears to be a stripped down debian
-java minecraft tcp and udp port is 25565
-also allowed windows firewall for the above port for in and out connections so the steam deck can join
+* man pages seem to not exist on a steam deck but --help is present
+* if you need a text editor vim is installed (is nano?)
+* steamdeck is running what appears to be a stripped down debian
+java minecraft uses tcp and udp port 25565
+Also done but not mentioned in this help is I allowed Windows firewall for the above port for in and out connections (TCP and UDP) so the steam deck can join the windows machine
 
 STEP 1. enable ssh server so you can use a real keyboard remotley using another computer on your network
 https://shendrick.net/Gaming/2022/05/30/sshonsteamdeck.html
