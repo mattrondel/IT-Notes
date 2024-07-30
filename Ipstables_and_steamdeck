@@ -1,29 +1,89 @@
 
-fyi:man pages seem to not exist on a steam deck but --help is present
-fyi:vim is installed
+fyi: man pages seem to not exist on a steam deck but --help is present
+fyi: if you need a text editor vim is installed
 fyi: steamdeck is running what appears to be a stripped down debian
 
-Step 1 enable ssh server so you can use a real keyboard 
+STEP 1. enable ssh server so you can use a real keyboard remotley using another computer on your network
 https://shendrick.net/Gaming/2022/05/30/sshonsteamdeck.html
 
-Step 2 get ip address
-ip addr
-https://opensource.com/article/18/5/how-find-ip-address-linux
 
 
-Step 3 get current username to use to login for putty
-step 4. install putty or some other decent ssh client
-step 5. add port rules for java minecraft using iptables
+STEP 2. get ip address
+  type: ip addr
+other methods that might also work : https://opensource.com/article/18/5/how-find-ip-address-linux
+
+STEP 3. get current username to use to login for putty
+  type: whoami
+
+STEP 4. install putty or some other decent ssh client
+
+STEP 5. add port rules for java minecraft using iptables (pro tip switch to root to save typing of root password)
+from:
+https://gist.github.com/Maxopoly/6c925a1f18f9e2f3b9818d1c1582b17e
+
+         #You probably want to do this in root to reduce the amount of sudos required
+         su -
+         
+         #Install iptables if you haven't already
+         #Alternatively use packet manager of your choice
+         apt-get install iptables
+         
+         #Allow all incoming traffic to begin with
+         iptables -P INPUT ACCEPT
+         #Clean out any existing input rules. You may also remove the "INPUT" argument and run only "iptables -F" to clear all chains. When doing so, make sure there are no rules in other chains that you still need (list via "iptables -L"), for example Oracle cloud servers will have preset rules, which should not be removed.
+         iptables -F INPUT
+         
+         #Allow all internal connections
+         iptables -A INPUT -i lo -j ACCEPT
+         
+         #Allow continuing setup connections
+         iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+         
+         #Allow ssh, adjust port if you run it on non-default
+         iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+         
+         #Allow minecraft, adjust port if you run it on non-default
+         iptables -A INPUT -p tcp --dport 25565 -j ACCEPT
+         
+         #Disallow all input not whitelisted
+         #DO NOT RUN THIS IF YOU HAVEN'T VERIFIED YOU WHITELISTED SSH, YOU WILL LOCK YOURSELF OUT
+         iptables -P INPUT DROP
+         
+         #Block all forwarding
+         iptables -P FORWARD DROP
+         
+         #Allow all outgoing
+         iptables -P OUTPUT ACCEPT
+         
+         #Save rules, they won't be persisted past restart of the machine otherwise
+         apt-get install iptables-persistent
+         #iptables-persistent will load from this file automatically
+         iptables-save > /etc/iptables/rules.v4
+         
+         
+         #Optional stuff from here on:
+         
+         #If you have other internal servers for backups etc. you can use this to allow any connections from them
+         iptables -A INPUT -p tcp -s XXX.XXX.XXX.XXX -j ACCEPT
+         
+         #Whitelist mumble
+         iptables -A INPUT -p tcp --dport 64738 -j ACCEPT
+         iptables -A INPUT -p udp --dport 64738 -j ACCEPT
+         
+         #Whitelist Jenkins
+         iptables -A INPUT -p tcp --dport 8080 -j ACCEPT
+         
+         #Whitelist Votifier
+         iptables -A INPUT -p tcp --dport 8192 -j ACCEPT
+         iptables -A INPUT -p udp --dport 8192 -j ACCEPT
+         
+         #Allow ICMP, this also makes server health check tools from various hosting providers happier
+         iptables -A INPUT -p icmp --icmp-type echo-request -j ACCEPT
 
 
 
-
-
-
-save iptables and make them persistant so when the device restarts you dont have to do this again
-
-https://askubuntu.com/questions/66890/how-can-i-make-a-specific-set-of-iptables-rules-permanent
-
+STEP 6. save iptables and make them persistant so when the device restarts you dont have to do this again (need to test)
+     from: https://askubuntu.com/questions/66890/how-can-i-make-a-specific-set-of-iptables-rules-permanent
 
 
 
