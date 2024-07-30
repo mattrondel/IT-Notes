@@ -1,1 +1,57 @@
 
+fyi:man pages seem to not exist on a steam deck but --help is present
+fyi:vim is installed
+fyi: steamdeck is running what appears to be a stripped down debian
+
+Step 1 enable ssh server so you can use a real keyboard 
+https://shendrick.net/Gaming/2022/05/30/sshonsteamdeck.html
+
+Step 2 get ip address
+ip addr
+https://opensource.com/article/18/5/how-find-ip-address-linux
+
+
+Step 3 get current username to use to login for putty
+step 4. install putty or some other decent ssh client
+step 5. add port rules for java minecraft using iptables
+
+
+
+
+
+
+save iptables and make them persistant so when the device restarts you dont have to do this again
+
+https://askubuntu.com/questions/66890/how-can-i-make-a-specific-set-of-iptables-rules-permanent
+
+
+
+
+
+bonus:history dump
+
+ 1  iptables -P INPUT ACCEPT
+    2  iptables -A INPUT -i lo -j ACCEPT
+    3  iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+    4  iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+    5  iptables -A INPUT -p tcp --dport 25565 -j ACCEPT
+    6  history
+    7  iptables -P INPUT ACCEPT
+    8  apt-get
+    9  iptables -F INPUT
+   10  iptables -A INPUT -i lo -j ACCEPT
+   11  iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+   12  iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+   13  iptables -A INPUT -p tcp --dport 25565 -j ACCEPT
+   14  iptables -P OUTPUT ACCEPT
+   15  apt install
+   16  iptables-persistent
+   17  systemd
+   18  rpm
+   19  iptables-persistent
+   20  history
+   21  iptables -P OUTPUT ACCEPT
+   22  iptables -A INPUT -i lo -j ACCEPT
+   23  iptables -A INPUT -p tcp --dport 25565 -j ACCEPT
+   24  iptables -A INPUT -p udp --dport 25565 -j ACCEPT
+   25  iptables-save | tee /etc/iptables.conf
