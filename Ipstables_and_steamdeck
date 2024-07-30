@@ -2,6 +2,8 @@
 fyi: man pages seem to not exist on a steam deck but --help is present
 fyi: if you need a text editor vim is installed
 fyi: steamdeck is running what appears to be a stripped down debian
+java minecraft tcp and udp port is 25565
+also allowed windows firewall for the above port for in and out connections so the steam deck can join
 
 STEP 1. enable ssh server so you can use a real keyboard remotley using another computer on your network
 https://shendrick.net/Gaming/2022/05/30/sshonsteamdeck.html
@@ -84,7 +86,13 @@ https://gist.github.com/Maxopoly/6c925a1f18f9e2f3b9818d1c1582b17e
 
 STEP 6. save iptables and make them persistant so when the device restarts you dont have to do this again (need to test)
      from: https://askubuntu.com/questions/66890/how-can-i-make-a-specific-set-of-iptables-rules-permanent
+other resources consulted :
+https://www.cyberciti.biz/faq/how-to-save-iptables-firewall-rules-permanently-on-linux/
+https://medium.com/@oryaacov/3-ways-to-make-iptables-persistent-a77e956ee78
 
+
+
+https://www.reddit.com/r/SteamDeck/comments/tz490v/enable_ssh_on_the_deck/
 
 
 
