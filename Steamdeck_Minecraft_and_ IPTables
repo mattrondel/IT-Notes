@@ -1,6 +1,6 @@
 
 fyi: man pages seem to not exist on a steam deck but --help is present
-fyi: if you need a text editor vim is installed
+fyi: if you need a text editor vim is installed (is nano?)
 fyi: steamdeck is running what appears to be a stripped down debian
 java minecraft tcp and udp port is 25565
 also allowed windows firewall for the above port for in and out connections so the steam deck can join
