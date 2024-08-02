@@ -1,0 +1,32 @@
+Adobe Premere notes 
+
+* Remove noise like ac unit
+select the clip
+audio tab > dialog > repair > check box for reduce noise > move slider to right to taste (try 7.1)
+if its a hum noise try dehum as well
+if its wind like noise try reduce rumble
+
+*Normalize audo
+do at done with all edits
+
+make sure audio meter is showing by: Window> Audio Meters make sure its check(showing)
+click \ to see all of timeline
+select all by click hold and drag or ctrl + a
+right click on any portion> audio gain> normalize all peaks
+try -3 to start 
+
+
+For reference 
+voice/dialog be between -12 and -6
+music like background music
+-30
+
+
+Adding transitions
+https://helpx.adobe.com/premiere-pro/using/transition-overview-applying-transitions.html
+
+cross disolve it a good transition
+play it back if it looks to short then edit the transition time to 1.5 seconds or 2
+
+to avoid the message "Insufficient media this transition will contain repeated frames"
+cut a few frames before or after the clips then add the transition
