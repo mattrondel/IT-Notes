@@ -1,3 +1,5 @@
+https://github.com/louislam/uptime-kuma
+
 https://github.com/lostindark/DriverStoreExplorer
 
 https://www.tinker-mods.com/buy-replacement-parts/original-xbox/disc-drives/original-xbox-disc-drive-replacement.php
