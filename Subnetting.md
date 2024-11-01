@@ -8,12 +8,4 @@
 | 1st Octet | /1 | /2 | /3 | /4 | /5 | /6 | /7 | /8 |
 
 
-
-| Group Size | Second Header | Group Size | Second Header | Group Size | Second Header | Group Size | Second Header | Group Size |
-| ------------- | ------------- |------------- | ------------- |------------- | ------------- |------------- | ------------- |------------- |
-| Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
-
-
-
 [https://subnetipv4.com/](https://subnetipv4.com/)
