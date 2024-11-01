@@ -1,5 +1,6 @@
 
 | Group Size | 128 | 64 | 32 | 16 | 8 | 4 | 2 | 1 |
+| ------------- | ------------- |------------- | ------------- |------------- | ------------- |------------- | ------------- |------------- |
 | Subnet | 128 | 192 | 224 | 240 | 248 | 252 | 254 | 255 |
 | CIDR | /25 | /26 | /27 | /28 | /29 | /30 | /31 | /32 |
 | 3rd Octet | /17 | /18 | /19 | /20 | /21 | /22 | /23 | /24 |
@@ -9,7 +10,7 @@
 
 
 | Group Size | Second Header | Group Size | Second Header | Group Size | Second Header | Group Size | Second Header | Group Size |
-| Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
+| ------------- | ------------- |------------- | ------------- |------------- | ------------- |------------- | ------------- |------------- |
 | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
 | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
 
