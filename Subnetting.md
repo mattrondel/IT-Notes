@@ -1,5 +1,8 @@
 
 | Group Size | 128 | 64 | 32 | 16 | 8 | 4 | 2 | 1 |
+
+| Command | Command | Description |
+
 | Subnet | 128 | 192 | 224 | 240 | 248 | 252 | 254 | 255 |
 
 
