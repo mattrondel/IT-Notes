@@ -1,0 +1,8 @@
+(Common issue with SHB)
+open regedit
+go to:
+HKEY Local Machine\Polices\Microsoft\Edge
+look for the key:
+SSLErrorOverrideAllowed
+change value to 1
+close and reopen Edge and try the site again the option 
