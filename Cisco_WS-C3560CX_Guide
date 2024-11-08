@@ -8,3 +8,58 @@ Model guide ws-C3560CX
 
 password recovery guide:
 https://www.cisco.com/c/en/us/support/docs/switches/catalyst-2950-series-switches/12040-pswdrec-2900xl.html
+
+
+Disconnect the power cable(s) press and hold the mode key and power up the unit
+
+Release the Mode button when you see "the password recovery mechanism is enabled"
+
+
+on console side you should be in the boot loader with the prompt:
+Switch:
+
+add the following variable
+Switch: SWITCH_IGNORE_STARTUP_CFG=1
+
+type flash or flash_init to clear memory otherwise you will run into a message of "boot process failed" or "error loading flash:/....."
+then wait 
+
+
+rename flash:config.text flash:config.old
+
+type boot to boot the system.
+
+Enter "n" at the prompt to abort the initial configuration dialog.
+
+At the switch prompt, type en to enter enable mode.
+
+Switch>en
+Switch#
+
+
+Copy the configuration file into memory.
+
+Switch#copy flash:config.text system:running-config
+
+The configuration file is now reloaded. (the hostname should now change to the configurations
+
+ Overwrite the passwords which are necessary. You need not overwrite all of the mentioned passwords.
+
+Sw1#configure terminal
+
+
+Sw1(config)#enable secret <new_secret_password>
+
+
+
+Sw1(config)#enable password <new_enable_password>
+
+
+Sw1(config)#line vty 0 15
+Sw1(config-line)#password <new_vty_password>
+
+Sw1(config-line)#login
+
+Write the running configuration to the configuration file with the write memory command.
+
+Sw1#write memory
