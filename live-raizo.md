@@ -15,6 +15,8 @@ To turn off num lock
 to determine output ports available
 ls -l /dev/tty[SU]*
 
+in some cases /dev/ttyUSB0 might be the correct option dispite your cable being serial
+
 
 
 Helpful site:
