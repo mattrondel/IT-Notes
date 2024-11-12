@@ -63,3 +63,8 @@ Sw1(config-line)#login
 Write the running configuration to the configuration file with the write memory command.
 
 Sw1#write memory
+
+
+restore ssh
+crypto key zeroize rsa
+ip ssh rsa keypair-name <name>
