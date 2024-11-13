@@ -1,0 +1,93 @@
+22 questions
+
+good sites:
+gauthmath.com
+https://www.certcommunity.org/forum/topic/5888-offer-understanding-cisco-network-automation-essentials-%E2%80%94-16-ce-credits-free-from-c1sco-u/page/3/
+
+Which two request/response formats are supported in RESTCONF API
+xml and json
+
+
+what is the last step in creating a template out of a device configuration?
+replacing the device specific values from the commit dry-run command with variables?
+bainly said remove device specific info
+
+In Cisco NSO, where can you find the YANG data models for the device configurations?
+in the Configuration Database ? unsure
+
+What is the result of the FASTMAP algorithm?
+minimum set of device configuration changes ? not sure
+
+Which commit flag would you use to commit changes if one of the devices in the transaction has out of band changes, is in out-of sync state, and you still want to perform a commit operation?
+commit no-out-of-sync-check ? not sure
+
+Which command should you use to generate XML configuration output?
+commit dry-run outformat xml i think is right or could be "get-config outformat xml" or "commit | display xml"
+
+Which three parameters are mandatory when adding a device manually? (Choose three.)
+Device type, IP address, and Authgroup configuration?
+
+Match the NSO component with its respective roles or tasks.
+CDB - Is in charge of service modeling using YANG, mapping to device models using templates or Java/Python code and service management activities
+Core engine - Handles all operations within the transaction manager, including event logging, performing validation, authentication, and rollback management
+Device manager - Stores NSO's own configuration, the configuration of all services, copies of the configuration of all managed devices, and all operational data specific to NSO
+service manager - Simplifies device interface integration and handles device configuration scenarios
+
+Which of the following is a benefit of pyATS?
+Automates the testing environment, profiles operational states and compares results 
+I think
+
+
+Which three of the following statements apply to the pyATS library Diff command? (Select three)
+
+    pyATS diff compares "snapshots" of the network from the parse or learn device output
+    pyATS diff allows you to exclude keys you do not want to be compared
+    pyATS diff can (only?) be used to compare both parse and learn command output
+
+
+What bests describes the pyATS parser?
+It converts device outputs to Python dictionaries and standardizes the output?
+
+Which tool provides a web-based network test automation solution that can schedule jobs and reserve resources for scheduled tests??
+jenkins?
+
+
+Which three of the following are the major pyATS AEtest sections? (Choose three) saw this on https://www.certcommunity.org
+test cases
+common setup?
+profiller?
+
+What is one of the advantages of using pyATS to profile a network state?
+pyATS network profiling compares network states automatically. - this is my best guess
+
+
+What best describes a pyATS testbed?
+t is a YAML-formatted file that describes the devices and how they link together to form the network topology.
+this is my best guess
+
+Which stage of the DevOps pipeline allows for early detection and resolution of conflicts?
+Test
+this is my best guess
+
+Which modeling language is used by Cisco Network Services Orchestrators (NSO) to describe the data model framework for services and devices?
+YANG
+this is my best guess
+
+Which option best describes Ansible and NSO integrations?
+Ansible has several modules for NSO automation..
+
+What is considered good policy when defining the source of truth for a network that is managed as Infrastructure as Code (IaC)? (Choose 3)
+Storing circuit information
+maintiang the iac
+assiging subnets
+
+
+How does GitLab execute instructions on the GitLab CI pipeline?
+It runs the CI pipeline on any runner that is registered and enabled for a GitLab project.
+my best guess
+
+Which statement describes the AEtest structure?
+"Common Setup," "Testcase(s)," and "Common Cleanup,
+
+What option is a continuous integration benefit?
+CI increases the speed to market and helps to realize revenue and results faster.
