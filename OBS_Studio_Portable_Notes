@@ -1,0 +1,21 @@
+Video Capture
+in sources remove all items
++ > Create New
+display capture check "Make source Visible"
+Display 2: "whatever it says"
+Capture Method: Automatic ---> DXGI Desktop Duplication --> OR Windows.. Version
+uncheck Capture Cursor
+check eye ball in case nothing shows
+click hold and drag alt to crop
+then click hold and drag to scale to video window, window wil try to Snap to edges
+
+Audio
++ > Audio Output capture
+Device> Speakers 2 Dell USB Soundbar?
+check box for Use Device Timestamps
+"you should see the sound bar moving with sound
+right click > hide on non-active layers
+
+start recording
+Stop recording
+File> Show recodings
