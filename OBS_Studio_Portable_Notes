@@ -8,6 +8,7 @@ uncheck Capture Cursor
 check eye ball in case nothing shows
 click hold and drag alt to crop
 then click hold and drag to scale to video window, window wil try to Snap to edges
+alternativly crop the video then right click > Transform Fit to screen/reset transform/Center to screen
 
 Audio
 + > Audio Output capture
