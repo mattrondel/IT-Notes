@@ -1,3 +1,10 @@
+The best source of info on Staff Engineer roles are the books from Tanya Reilly and Will Larson. Read them.
+
+Most of Larson's thoughts are available at his website staffeng.com, start there. Lots of interviews with folks about the role, too.
+
+
+https://staffeng.com/
+
 
 https://github.com/microsoft/powertoys
 
