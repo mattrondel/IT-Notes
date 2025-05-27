@@ -1,0 +1,25 @@
+# Set the backup destination folder
+$backupFolder = "$env:USERPROFILE\Documents\EdgeBookmarksBackup"
+
+# Get the path to the Edge user data directory
+$edgeUserDataPath = "$env:LOCALAPPDATA\Microsoft\Edge\User Data\Default"
+
+# Files to back up (Edge bookmarks are stored in 'Bookmarks' and 'Favicons')
+$filesToBackup = @("Bookmarks", "Favicons")
+
+# Create the backup folder if it doesn't exist
+if (!(Test-Path -Path $backupFolder)) {
+    New-Item -ItemType Directory -Path $backupFolder -Force
+}
+
+# Copy the files to the backup folder
+foreach ($file in $filesToBackup) {
+    $sourceFile = Join-Path -Path $edgeUserDataPath -ChildPath $file
+    if (Test-Path -Path $sourceFile) {
+        $destinationFile = Join-Path -Path $backupFolder -ChildPath "$file-$(Get-Date -Format yyyyMMddHHmmss)"
+        Copy-Item -Path $sourceFile -Destination $destinationFile
+        Write-Output "Backed up $file to $destinationFile"
+    } else {
+        Write-Warning "$file not found in $edgeUserDataPath"
+    }
+}
