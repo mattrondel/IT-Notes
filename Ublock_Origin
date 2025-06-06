@@ -1,0 +1,8 @@
+stop Use your google account to sign in to __ website
+"My filters"
+
+||accounts.google.com/gsi/*$xhr,script,3p
+||accounts.google.com/gsi/iframe*
+
+from:
+https://www.adamsdesk.com/posts/block-disable-sign-in-with-google-prompt/#block-sign-in-with-google-prompt-using-ublock-origin
