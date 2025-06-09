@@ -1,4 +1,4 @@
-# Here’s a PowerShell script that backs up Microsoft Edge bookmarks (Favorites) by copying the relevant files from the Edge user data directory to a backup location.
+# PowerShell script that backs up Microsoft Edge bookmarks (Favorites) by copying the relevant files from the Edge user data directory to a backup location.
 
 #       Notes:
 #	•	This script targets the Default Edge profile. If you’re using a different profile (e.g., “Profile 1”), you’ll need to change the path accordingly (User Data\Profile 1, etc.).
