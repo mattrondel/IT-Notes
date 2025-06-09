@@ -1,0 +1,13 @@
+"Every Awesome Cisco Engineer will Need Ice Cream Daily"
+
+0 Emergency
+1 A
+2 C
+3 Error
+4 Warning
+5 Notifications
+6 Informational
+7 Debug
+
+Logging trap 7 - the number is all items at that number abd below in this
+example its everything
