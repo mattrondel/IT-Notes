@@ -1,0 +1,190 @@
+#!/bin/bash
+cd ~ && mkdir roles && cd roles
+ansible-galaxy init lamp
+nano lamp/tasks/main.yml
+- name: Install our packages
+  apt:
+    name: "{{ item }}"
+    state: present
+    update_cache: true
+  with_items: "{{ packages }}"
+
+- name: Confirm services are running
+  service:
+    name: "{{ item }}"
+    state: started
+  with_items: "{{ services }}"
+
+- name: Enable Apache2 modssl
+  shell: a2enmod ssl
+
+- name: Enable Apache2 Default HTTPS site
+  shell: a2ensite default-ssl
+
+- name: Restart Apache 
+  service:
+    name: apache2
+    state: restarted
+
+nano ~/app.yml
+
+And paste below:
+---
+- hosts: localhost
+  gather_facts: false
+  connection: local
+  become: yes
+  vars:
+    packages:
+      - apache2
+      - mysql-server
+      - mysql-common
+      - mysql-client
+      - libapache2-mod-wsgi
+    services:
+      - apache2
+      - mysql
+  roles:
+    - lamp
+	
+ansible-playbook ~/app.yml && nano ~/app.yml
+erase all lines (ctrl k repeatedly) 
+And have only the following:
+
+---
+- hosts: localhost
+  gather_facts: false
+  connection: local
+  become: yes
+  roles:
+    - lamp
+
+nano ~/roles/lamp/defaults/main.yml
+Paste following:
+
+packages:
+  - apache2
+  - mysql-server
+  - mysql-common
+  - mysql-client
+services:
+  - apache2
+  - mysql
+
+ansible-playbook ~/app.yml && nano ~/roles/lamp/handlers/main.yml
+Paste in following:
+
+- name: Restart Apache
+  service:
+    name: apache2
+    state: restarted
+
+nano ~/roles/lamp/tasks/main.yml
+Paste the following:
+
+---
+- name: Install our packages
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ packages }}"
+
+- name: Confirm services are running
+  service:
+    name: "{{ item }}"
+    state: running
+  with_items: "{{ services }}"
+
+- name: Enable Apache2 modssl
+  shell: a2enmod ssl
+
+- name: Enable Apache2 Default HTTPS site
+  shell: a2ensite default-ssl
+  notify: Restart Apache
+
+ansible-playbook ~/app.yml
+
+cd ~/roles && ansible-galaxy init webapplication
+
+nano ~/roles/webapplication/defaults/main.yml
+Paste:
+
+---
+app_download_dest: /tmp/webapp
+app_dest: /var/www/webapp
+app_repo: https://github.com/whelmed/ansible_demo.git
+
+touch ~/roles/webapplication/tasks/database.yml
+touch ~/roles/webapplication/tasks/app.yml
+touch ~/roles/webapplication/tasks/site.yml
+
+nano ~/roles/webapplication/tasks/database.yml
+Paste:
+
+- apt: name=python-mysqldb state=present
+- mysql_user: name=appuser password=94nfsUl7 priv=*.*:ALL state=present
+- mysql_db: name=appdata state=present
+
+nano ~/roles/webapplication/tasks/app.yml
+Paste:
+
+- apt: name=libmysqlclient-dev state=present
+
+- apt: name=python-pip state=present
+
+- git: repo={{app_repo}}
+       dest="{{app_download_dest}}"
+
+- pip: requirements={{app_download_dest}}/app/requirements.txt
+
+- copy: src={{app_download_dest}}/app/ dest={{app_dest}}
+
+nano ~/roles/webapplication/templates/apache.conf
+Paste:
+
+<VirtualHost *>
+    ServerName {{inventory_hostname}}
+
+    WSGIDaemonProcess webapp user=ubuntu group=ubuntu threads=5
+    WSGIScriptAlias / {{app_dest}}/wsgi.py
+
+    <Directory {{app_dest}}>
+        WSGIProcessGroup webapp
+        WSGIApplicationGroup %{GLOBAL}
+        Order deny,allow
+        Allow from all
+    </Directory>
+</VirtualHost>
+
+nano ~/roles/webapplication/tasks/site.yml
+Paste:
+
+- apt: name=libapache2-mod-wsgi state=present
+
+- name: Copy the apache configuration file
+  template:
+    src: "apache.conf"
+    dest: /etc/apache2/sites-available/000-default.conf
+  notify: "Restart Apache"
+  
+nano ~/roles/webapplication/tasks/main.yml
+Paste:
+
+- include: database.yml
+- include: app.yml
+- include: site.yml
+
+nano ~/app.yml
+
+---
+- hosts: localhost
+  gather_facts: false
+  connection: local
+  become: yes
+  roles:
+    - lamp
+    - webapplication
+	
+ansible-playbook ~/app.yml
+
+check url
