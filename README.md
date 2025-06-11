@@ -1,3 +1,4 @@
+https://www.reddit.com/r/AskReddit/s/1HETt5TvTW
 
 https://github.com/microsoft/PowerStig
 
