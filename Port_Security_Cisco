@@ -1,0 +1,29 @@
+#Show port-security - displays list of all ports with port security  and thier status
+
+secure port  max secure(addr (count)  current addr(count)  secure violation(count)  secure action
+---------------------------------------------------------------------------------------------------
+fa 0/1          1                        1                    0                         shutdown
+fa 0/2          1                        1                    1                         shutdown
+look in the secure violation(count) if troubleshooting also port light will be off (probably)
+
+
+if security violation count = 1 
+querery the interface
+#show port security interface fa 0/1
+port status     secure shutdown
+...
+...
+
+last source addr4ess : vlan: AAAA:BBBB:CCCC:1 <- This is the last mac address that tripped port secuirty
+if you have sticky mac enabled then you can compare the sticky mac and see the difference
+
+# show interface fa 0/2
+fast ethernet 0/2 is down, line protocol is down (err-disabled) <- look for this with ports in question with port security
+
+
+"Modes" of port security
+ - Protect does not accept traffic after violation
+ - Restrict - creates/generates a log and increments counter on show port-security interface fa 0/1
+ - Shutdown - disables port with err-disabled
+gernates log and trap (snmp)
+default function with mac address of 1
