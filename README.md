@@ -1,3 +1,5 @@
+"A few seconds of typing is worth hours of sanity down the line"
+
 R1019676-2
 
 https://www.reddit.com/r/AskReddit/s/1HETt5TvTW
