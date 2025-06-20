@@ -6,3 +6,13 @@ stop Use your google account to sign in to __ website
 
 from:
 https://www.adamsdesk.com/posts/block-disable-sign-in-with-google-prompt/#block-sign-in-with-google-prompt-using-ublock-origin
+
+***************************************************************
+****************************************************************
+
+Disable Google AI overview
+settings > my filters , and add this as a filter:
+www.google.com###Odp5De
+
+from:
+https://www.reddit.com/r/techsupport/comments/1h9jpqs/is_there_a_real_way_to_shut_off_the_google_ai/
