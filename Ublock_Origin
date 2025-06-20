@@ -1,4 +1,4 @@
-stop Use your google account to sign in to __ website
+Stop "Use your google account to sign in to __ website"
 "My filters"
 
 ||accounts.google.com/gsi/*$xhr,script,3p
@@ -11,6 +11,7 @@ https://www.adamsdesk.com/posts/block-disable-sign-in-with-google-prompt/#block-
 ****************************************************************
 
 Disable Google AI overview
+
 settings > my filters , and add this as a filter:
 www.google.com###Odp5De
 
