@@ -9,3 +9,6 @@
 
 
 [https://subnetipv4.com/](https://subnetipv4.com/)
+
+
+[Visual Calculator](https://www.davidc.net/sites/default/subnets/subnets.html)
