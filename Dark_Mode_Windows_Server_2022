@@ -1,0 +1,13 @@
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize
+AppsUseLightTheme = 0 (to enable dark mode for supported apps)
+
+modify or create the following DWORD values:
+SystemUsesLightTheme = 0 (to enable dark mode for system UI) changed this from 1
+Sign out / restart so changes take effect.
+
+Not test unlike the above but for other applications that do not support dark mode for server 2022 go to:
+You can enable Full Dark Mode on Windows 10/11/Server by using below steps :
+
+    Search for "Ease of Access" in search option -Under Vision, click "High contrast"
+    Toggle "High Contrast" to On.
+    Adjust display settings like Making text and items larger and Choose contrast theme.
