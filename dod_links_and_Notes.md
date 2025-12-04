@@ -1,5 +1,7 @@
 [DoD Patch Repository](https://patches.csd.disa.mil)
 
+[Intelshare](https://intelshare.intelink.gov)
+
 SDC and Secure Host Baseline (SHB) 
 
 Too Many Certs show up when you try to use your CAC?
