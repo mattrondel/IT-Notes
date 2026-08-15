@@ -1,0 +1,240 @@
+ 7-26-26
+ fyi this is ubuntu jammy
+no network card using ip addr or ifconfig or sudo ls /sys/class/net
+ only lo: and docker0:
+link lights on motherboard and on switch side
+
+ 
+ kernel verion 
+ uname -r
+ 6.8.0-1008
+ 
+ Ubuntu version
+ lsb_release -a
+ Ubuntu 22.04.1 LTS
+ Release 22.04
+ jammy
+ 
+ tried:
+ sudo systemctl restart NetworkManager
+ no change
+ 
+ tried lspci | grep -i ethernet
+ output showed 
+ 03:00.0 ethernet controller: realtek semiconductor co ltd RTL8111/8168/8411 pci express gigabit controller (rev 0c)
+ then ran:
+ lspci -k -s 03:00.0
+ which displayed
+  03:00.0 ethernet controller: realtek semiconductor co ltd RTL8111/8168/8411 pci express gigabit controller (rev 0c)
+  subsystem:micro-star international co., Ltd [MSI] RTL8111/8168/8411 PCI express gigabit ethernet controller
+  ip link show
+  only shows:
+  1: lo:
+  2: docker0:
+  
+uname -r
+returned
+6.8.0-1008-nvidia
+lsmod | grep r816
+returned blank results
+find /lib/modules/$(uname -r) -iname "*r8169*"
+returned blank results
+find /lib/modules/$(uname -r) -iname "*r8168*"
+returned blank results
+dkms status
+returned blank results
+sudo dmesg | grep -iE "r8169|r8168|realtek"
+returned blank results
+
+dpkg -l | grep linux-image
+returned several results
+
+going to try 
+linux-image-6.8.0-124?
+or linux-image-generic
+unable to boot to grub menu using esc or shift
+trying:
+Open the configuration file for edit:
+
+ $ sudo vi /etc/default/grub
+
+Edit the following three lines like this:
+
+ GRUB_TIMEOUT_STYLE=menu (old copy said =hidden)
+ GRUB_TIMEOUT=10 (old copy of this file was 0)
+ GRUB_TERMINAL=console (old copy did not have this line present)
+
+Don't forget reconfigure update:
+
+ $ sudo update-grub
+then restarted
+shift did not show the menu so i added the 
+GRUB_TERMINAL=console
+to 
+/etc/default/grub
+need to run (forgot the first time)
+sudo update-grub
+trying shift
+menu showed up but arrow keys didnt work
+changed the file for 20 seconds so i can read it better
+moved usb cables to higher position and no change
+trying bios (del on startup)
+no change
+went and go ps/2 keyboard
+accidently pulled hdmi cable out while connecting keyboard
+PS/2 keyboard was able to get to bios
+while in bios i looked for:
+"legacy USB support" or "USB keyboard support"
+found it in settings> advanced> USB configuration> legacy usb support 
+was set to enabled, since it didnt work i put it to auto
+bios recognises the card (its onboard)
+saved and exited bios
+advanced boot options chosen in grub menu
+options are:
+ubuntu, with linux 6.8.0-1008-nvidia
+ubuntu, with linux 6.8.0-1008-nvidia (recovery mode)
+ubuntu, with linux 5.15.0-186-generic
+ubuntu, with linux 5.15.0-186-generic (recovery mode)
+ubuntu, with linux 5.15.0-177-generic
+ubuntu, with linux 5.15.0-177-generic (recovery mode)
+picked:
+ubuntu, with linux 5.15.0-186-generic then enter to boot the system (no editing needed)
+tried ip link show
+enp3s0 now showed up
+trying:
+sudo apt install --reinstall linux-modules-6.8.0-1008-nvidia
+got could not find any package
+trying:
+sudo apt update
+sudo apt install --reinstall --fix-missing linux-modules-6.8.0-1008-nvidia linux-image-6.8.0-1008-nvidia
+Pending kernel upgrade screen said
+newer kernel available
+the current kernel running is 5.15.0-186-generic which is not the expected kernel verion 6.8.0-1008-nvidiarestarting the system to load the new kernel will not be handled automatically so you should consider rebooting
+it also asked if i wanted to restart plex services which i checked the box for and restared
+ran
+uname -r
+returned
+6.8.0-1008-nvidia
+then ifconfig
+network driver is missing
+after restarting with nvidia then back to generic i decided to make generic my default kernel
+did this to list what my screen actually displays:
+awk -F\' '/menuentry / {print $2}' /boot/grub/grub.cfg
+in my case i want:
+Ubuntu, with Linux 5.15.0-186-generic
+did
+sudo nano /etc/default/grub
+GRUB_DEFAULT="Advanced options for Ubuntu>Ubuntu, with Linux 5.15.0-186-generic"
+sudo update-grub
+sudo reboot
+this put it back in nvidia kernel
+went back to 
+sudo nano /etc/default/grub
+changed
+GRUB_DEFAULT="what i had previously"
+to 
+GRUB_DEFAULT="Ubuntu, with Linux 5.15.0-186-generic"
+bash
+sudo update-grub
+sudo reboot
+uname -r
+still didnt fix it
+trying
+sudo grub-set-default 2
+sudo update-grub
+sudo reboot
+still not working
+
+sudo grub-set-default "Ubuntu, with Linux 5.15.0-186-generic"
+sudo update-grub
+sudo reboot
+still did not fix it
+
+when running sudo update-grub it said:
+warning: please do not use old title 'ubuntu, with linux 5.15.0-186-generic' for GRUB_DEFAULT, use "advanced options for Ubuntu>Ubuntu, with Linux 5.15.0-186-generic' (for versions before 2.00) or 'gnulinux-advanced-0b87637a-7180-477b-8fc4-725aad01c4ff>gnulinux-5.15.0-186-generic-advanced-0b87637a-7180-477b-8fc4-725aad01c4ff' (for 2.00 or later)
+trying
+sudo nano /etc/default/grub
+
+added:
+GRUB_DEFAULT="gnulinux-advanced-0b87637a-7180-477b-8fc4-725aad01c4ff>gnulinux-5.15.0-186-generic-advanced-0b87637a-7180-477b-8fc4-725aad01c4ff"
+
+sudo update-grub
+warning went away
+sudo reboot
+uname -r
+
+
+
+sudo grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=ubuntu --recheck
+sudo update-grub
+
+removing this kernel
+
+linux-image-6.8.0-1008-nvidia
+linux-modules-6.8.0-1008-nvidia
+linux-objects-nvidia-535-6.8.0-1008-nvidia
+linux-signatures-nvidia-6.8.0-1008-nvidia
+
+linux-headers-6.8.0-1008-nvidia  (if present)
+linux-modules-extra-6.8.0-1008-nvidia  (if present)
+
+ended up removing this kernel version until i can find out more, in the mean time i just want to get plex back up
+sudo apt purge linux-image-6.8.0-1008-nvidia linux-modules-6.8.0-1008-nvidia linux-objects-nvidia-535-6.8.0-1008-nvidia linux-signatures-nvidia-6.8.0-1008-nvidia
+sudo update-grub
+removed lines for delayed start to =0
+sudo reboot
+checked plex operations and it was good off of a laptop
+
+
+ /etc/cron.weekly
+ run Plex_lazyness.sh
+
+
+update on 8/15
+somehow the nvidia kernel return eventhough I thought I had removed it
+after finding a mouse and a ps/2 keyboard I found the desktop to be booting correctly however when I did ifconfig only docker0 and lo:: were present
+did a sudo nano /etc/default/grub
+changed time out from 0 to 10
+saved
+then I did sudo update-grub
+went to advanced options 
+picked the 5.15.0-187-generic
+did ifconfig and the network card returned
+
+
+trying:
+https://askubuntu.com/questions/216398/set-older-kernel-as-default-grub-entry
+
+The best solution for me was to set (in /etc/default/grub):
+
+ GRUB_DEFAULT=saved
+ GRUB_SAVEDEFAULT=true
+
+With this settings the last selected value is kept for the next boot. If you have a new kernel you don't have to edit your config.
+
+Don't forget to re-run sudo update-grub
+
+The solution is from reading: info grub-mkconfig
+
+after doing the above got the message below when running sudo update-grub
+
+Warning please dont use old title 'Ubuntu, with Linux 5.15.0-186-generic' for GRUB_DEFAULT, use 'Advanced options for Ubuntu>Ubuntu, with LInux 5.15.0-186-generic' (for versions before 2.00) or 'gnulinux-advanced-0b87637a-7180-477b-8fc4-725aad01c4ff>gunlinux-5.15.0-186-generic-advanced-0b87637a-7180-477b-8fc4-725aad01c4ff' (for 2.00 or later)
+
+after restarting this seemed to fix the default kernel issue
+
+at this point I checked my network share and tried to open a random video but it wouldnt play so just for fun I did 
+sudo apt-get install vlc
+
+while doing this it said pending kernel upgrade
+newer kernel available 
+the currently running kernel version is 5.15.0-187
+the expect kernel version 6.8.0-1008-nvidia
+restarting the system to load the new kernel will not be handled automatically, so you should consider rebooting
+
+after restarting i went to software and updates and in Updates tab> I changed subscribed to Security updates only (was set to all updates)
+changed Automatically check for updates to weekly (was daily)
+chaned When there are security updates to download automatically (was set to ownload and install automatically
+
+I think this system has a Nvidia GTX 960
+
+checked plex on laptop and it opened and played a new movie just fine
