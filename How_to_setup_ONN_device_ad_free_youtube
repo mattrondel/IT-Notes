@@ -1,0 +1,139 @@
+add wifi
+add your google account
+accept terms
+help improve google tv  > usage and diagnostics set to off > back
+Location> location status set to off> back
+accept
+continue 
+go to google tv
+
+quick settings> All settings> system > about> click Android OS Build 4-5x
+go back then Developer Options> turn on USB debugging
+disable "verify apps over USB"?
+Enable wireless debugging > Always allow on this network> allow> back
+take note of the ip address
+New
+give it a name
+highlight ip address > connect
+
+install adblink from:
+https://www.jocala.com/adblink.html
+put in ip address then connect
+when you connect via adblink on your tv check box for always allow from this computer and Allow for the dialog Allow USB Debugging
+
+
+Projectivy Launcher
+download latest from:
+https://github.com/spocky/miproja1/releases
+Install> drag and drop > select > install> and wait...
+
+now on the ONN launch it> go through the wizard > dont allow for tv listings> no to grant notification acess> no to crash reporting
+
+install smart tube
+https://smarttubeapp.github.io/
+
+
+kepler-arm64-v8a-googlePlay-10.20.0.1427-1afe9937.apk
+gets stuck in a loop
+
+trying arm64-v8a
+kepler-arm64-v8a-googlePlay-10.28.0.3441-367a93b4.apk
+
+
+Optional? do this on stock launcher and adblink
+once connected via ip address use Uninstall
+items removed (some might be listed, once removed restart the device)
+tubi tv
+cbs ott
+amazon video living room
+disney plus
+insagram airwave
+youtube tv
+>com.google.android.play.games
+com.google.android.youtube.tvmusic
+
+Testing
+adb shell pm disable-user --user 0 com.netflix.ninja
+adb shell pm disable-user --user 0 com.google.android.youtube.tv
+#run the below as stated in adblink
+> adb shell pm disable-user --user 0 com.google.android.youtube.tvmusic
+adb shell pm disable-user --user 0 com.google.android.play.games
+adb shell pm disable-user --user 0 com.google.android.videos
+
+Install Projectivy Launcher
+on computer go here install using your google account and select the device
+Projectivy Launcher: https://play.google.com/store/apps/details?id=com.spocky.projengmenu&hl=en_US&gl=US
+
+Installing downloader and smartube
+in the stock launcher
+install downloader by going to
+https://www.aftvnews.com/downloader/
+use the google play store link and install under your google account
+open downloader
+follow steps in https://github.com/yuliskov/SmartTube#installation
+i did:
+"(Easiest) Install Downloader by AFTVnews on your Android TV, open it and enter kutt.to/stn_beta or kutt.to/stn_stable, then read, understand and confirm the security prompts
+
+if you get the message:
+for your security, your tv currently isn't allowed to install unknown apps from this source. you can change this in settings.
+go to settings> check option for Downloader > then the prompt for Install for Startube> Done
+if there is a prompt telling you smartube is downloaded then click done
+and Projecivity Launcher?
+
+Install plex
+on home screen of stock launcher > apps when to Plex and chose install 
+
+set as default launcher - do this near last
+open projectivity launcher from stock launcher> .... there is a way to do this in the ui but I ended up using the 2 below commands in adblink
+
+In ADB Link, open its shell/terminal feature and run: 
+pm disable-user --user 0 com.google.android.apps.tv.launcherx 
+pm disable-user --user 0 com.google.android.tungsten.setupwraith
+(the second command stops the system from re-enabling the stock launcher on its own).
+once I did this when i tried to open netflix it when to an all black screen, google play store gave me a not connected to the internet and smarttube gave connection errors, to clear this I did a full restart in of the device
+
+*Once you setup the projectivity as default restart the device I had to to rejoin the wifi by re-adding the password
+
+
+Optional Preformance commands:
+need to test this:
+if using adblink remove "adb shell" from each command (without quotes)
+Double the speed of window animations and transitions
+
+adb shell settings put global window_animation_scale 0.5
+# display current
+# settings get global window_animation_scale
+# Default is 1.0
+
+adb shell settings put global transition_animation_scale 0.5
+# display current 
+# settings get global transition_animation_scale
+# Default is 1.0
+
+adb shell settings put global animatior_duration_scale 0.5
+# display current
+# settings get global animator_duration_scale
+# Default is null
+
+Need to test:
+if using adblink remove "adb shell" from each command (without quotes)
+improves performace by sceduling packages across mulitple cores, enables suspended execution of cached applications
+adb shell settings put global cached_apps_freezer enabled
+adb shell settings put secure tap_duration_threshold 0.0
+adb shell settings put secure touch_blocking_period 0.0
+
+Testing feature:
+testing disabling game mode
+Quick settings > Settings> Display and sound> Advanced display settings> disable game mode
+
+
+check box for Install Universal ADB driver
+uncheck open the toolkit
+
+https://smarttubeapp.github.io/
+
+Works:
+Mess up and need to start over? no you dont have to return it to the store
+while powered up press and hold the button for 5-10 seconds, continue to hold it then power it up then follow the on screen steps to reset
+
+
