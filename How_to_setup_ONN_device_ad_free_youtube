@@ -12,51 +12,40 @@ go back then Developer Options> turn on USB debugging
 disable "verify apps over USB"?
 Enable wireless debugging > Always allow on this network> allow> back
 take note of the ip address
-New
-give it a name
-highlight ip address > connect
 
 install adblink from:
 https://www.jocala.com/adblink.html
 put in ip address then connect
+In adblink
+New
+give it a name
+highlight ip address > connect
 when you connect via adblink on your tv check box for always allow from this computer and Allow for the dialog Allow USB Debugging
-
 
 Projectivy Launcher
 download latest from:
 https://github.com/spocky/miproja1/releases
 Install> drag and drop > select > install> and wait...
 
-now on the ONN launch it> go through the wizard > dont allow for tv listings> no to grant notification acess> no to crash reporting
+now on the ONN launch it> go through the wizard > "dont allow for tv listings" > no to "grant notification acess"> no to "crash reporting"
 
-install smart tube
-https://smarttubeapp.github.io/
-
-
-kepler-arm64-v8a-googlePlay-10.20.0.1427-1afe9937.apk
-gets stuck in a loop
-
-trying arm64-v8a
-kepler-arm64-v8a-googlePlay-10.28.0.3441-367a93b4.apk
-
-
-Optional? do this on stock launcher and adblink
+Optional? do this on stock launcher using adblink> uninstall
 once connected via ip address use Uninstall
-items removed (some might be listed, once removed restart the device)
+items removed (some might be listed but it really depends, once removed what you want then restart the device)
 tubi tv
 cbs ott
 amazon video living room
 disney plus
 insagram airwave
 youtube tv
->com.google.android.play.games
+was able to do this -> com.google.android.play.games
 com.google.android.youtube.tvmusic
 
-Testing
+Testing not all of these will work using Uninstall in Adblink
 adb shell pm disable-user --user 0 com.netflix.ninja
 adb shell pm disable-user --user 0 com.google.android.youtube.tv
-#run the below as stated in adblink
-> adb shell pm disable-user --user 0 com.google.android.youtube.tvmusic
+# run the below as stated in adblink
+adb shell pm disable-user --user 0 com.google.android.youtube.tvmusic
 adb shell pm disable-user --user 0 com.google.android.play.games
 adb shell pm disable-user --user 0 com.google.android.videos
 
@@ -72,7 +61,7 @@ use the google play store link and install under your google account
 open downloader
 follow steps in https://github.com/yuliskov/SmartTube#installation
 i did:
-"(Easiest) Install Downloader by AFTVnews on your Android TV, open it and enter kutt.to/stn_beta or kutt.to/stn_stable, then read, understand and confirm the security prompts
+"(Easiest) Install Downloader by AFTVnews on your Android TV, open it and enter kutt.to/stn_beta or kutt.to/stn_stable, then read, understand and confirm the security prompts"
 
 if you get the message:
 for your security, your tv currently isn't allowed to install unknown apps from this source. you can change this in settings.
@@ -97,6 +86,11 @@ once I did this when i tried to open netflix it when to an all black screen, goo
 Not all applications can be removed so what I had to do is simply hide them
 On home screen press and hold on on your remote on any app you wish to hide > Hide
 you can also reorrange your icons which is totally up to you
+
+finishing steps 
+open smartube and add your youtube account (I removed all options to hide/remove shorts)
+add your plex account
+add netflix account
 
 Optional Preformance commands:
 need to test this:
@@ -129,14 +123,22 @@ Testing feature:
 testing disabling game mode
 Quick settings > Settings> Display and sound> Advanced display settings> disable game mode
 
-
+-Not sure what this was for-
 check box for Install Universal ADB driver
 uncheck open the toolkit
 
 https://smarttubeapp.github.io/
 
 Works:
-Mess up and need to start over? no you dont have to return it to the store
+Make a mistake and need to start over? no you dont have to return it to the store
 while powered up press and hold the button for 5-10 seconds, continue to hold it then power it up then follow the on screen steps to reset
 
+install smart tube - dont use these steps use the other steps for smarttube (this is just here for reference)
+https://smarttubeapp.github.io/
+
+kepler-arm64-v8a-googlePlay-10.20.0.1427-1afe9937.apk
+gets stuck in a loop
+
+trying arm64-v8a
+kepler-arm64-v8a-googlePlay-10.28.0.3441-367a93b4.apk
 
