@@ -13,9 +13,10 @@ disable "verify apps over USB"?
 Enable wireless debugging > Always allow on this network> allow> back
 take note of the ip address
 
-install adblink from:
+Install adblink from:
 https://www.jocala.com/adblink.html
-put in ip address then connect
+put in ip address of onn device (obtained from android settings?)
+then connect
 In adblink
 New
 give it a name
@@ -50,12 +51,12 @@ adb shell pm disable-user --user 0 com.google.android.play.games
 adb shell pm disable-user --user 0 com.google.android.videos
 
 Install Projectivy Launcher
-on computer go here install using your google account and select the device
+on your computer install using your google account and select your onn device
 Projectivy Launcher: https://play.google.com/store/apps/details?id=com.spocky.projengmenu&hl=en_US&gl=US
 
-Installing downloader and smartube
-in the stock launcher
-install downloader by going to
+Install Downloader and Smartube
+Using the stock launcher (not Projectivy)
+on your computer install downloader by going to
 https://www.aftvnews.com/downloader/
 use the google play store link and install under your google account
 open downloader
@@ -63,14 +64,14 @@ follow steps in https://github.com/yuliskov/SmartTube#installation
 i did:
 "(Easiest) Install Downloader by AFTVnews on your Android TV, open it and enter kutt.to/stn_beta or kutt.to/stn_stable, then read, understand and confirm the security prompts"
 
-if you get the message:
+If you get the message:
 for your security, your tv currently isn't allowed to install unknown apps from this source. you can change this in settings.
 go to settings> check option for Downloader > then the prompt for Install for Startube> Done
 if there is a prompt telling you smartube is downloaded then click done
 and Projecivity Launcher?
 
 Install plex
-on home screen of stock launcher > apps when to Plex and chose install 
+On home screen of stock launcher > apps when to Plex and chose install 
 
 set as default launcher - do this near last
 open projectivity launcher from stock launcher> .... there is a way to do this in the ui but I ended up using the 2 below commands in adblink
