@@ -17,3 +17,9 @@ www.google.com###Odp5De
 
 from:
 https://www.reddit.com/r/techsupport/comments/1h9jpqs/is_there_a_real_way_to_shut_off_the_google_ai/
+
+
+***************************************************************
+***************************************************************
+Untested but If you get a ad blockers violate youtubes terms of service
+youtube.com##+js(set, yt.config_.openPopupConfig.supportedPopups.adBlockMessageViewModel, false) youtube.com##+js(set, Object.prototype.adBlocksFound, 0) youtube.com##+js(set, ytplayer.config.args.raw_player_response.adPlacements, []) youtube.com##+js(set, Object.prototype.hasAllowedInstreamAd, true)
