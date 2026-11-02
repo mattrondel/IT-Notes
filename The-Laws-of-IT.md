@@ -4,6 +4,8 @@ The threat of IT presence is sometimes more than enough to fix a problem.
 
 
 
+
+
 2 Inverse IT Law
 
 If you repeatedly fail at a task. The first non-IT person to attempt it will succeed immediately.
