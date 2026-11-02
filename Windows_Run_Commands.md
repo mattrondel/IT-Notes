@@ -1,6 +1,4 @@
-Teams  ms-teams
-
-| Program | command |
+| Program | Command |
 | ------------- | ------------- |
 | Teams | ms-teams |
 | Microsoft Edge | msedge |
