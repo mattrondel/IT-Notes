@@ -1,10 +1,4 @@
-1 Law of Presence
-
-The threat of IT presence is sometimes more than enough to fix a problem.
-
-
-
-
+1 Law of Presence: The threat of IT presence is sometimes more than enough to fix a problem.
 
 2 Inverse IT Law
 
