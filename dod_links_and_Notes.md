@@ -17,3 +17,18 @@ For Firefox:
 Hamburger Menu> Settings > "Privacy & Security > Certificates -> View Certificates> your certificates 
 
 in Firefox they display it as the last 6 hex delete what you don't need/use
+
+
+IL (or Isle as it sounds)
+
+Comparison of DoD Impact Levels
+
+IL2: Public or non-critical data.
+
+IL4: Standard Controlled Unclassified Information (CUI).
+
+IL5: High-sensitivity CUI and unclassified national security systems.
+
+IL6: Classified Secret data.
+
+IL7:  T/S
