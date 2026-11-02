@@ -1,5 +1,5 @@
 ==============================================================
-                Word of Wisdom from a Tech
+Word of Wisdom from a Tech
 ==============================================================
 
 1.	You will never know everything there is to know about fixing stuff.
