@@ -1,6 +1,6 @@
 https://sourceforge.net/projects/live-raizo/
 
-At the prompt type startx
+At the prompt type: startx
 
 right click > 
 tools > Text editior
