@@ -4,5 +4,5 @@
 | Microsoft Edge | msedge |
 | System Information | msinfo32 |
 | Devices and Printers| control printers |
-| Content Cell | Content Cell |
+| Device Manager | devmgmt.msc |
 | Content Cell | Content Cell |
