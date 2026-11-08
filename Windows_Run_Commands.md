@@ -3,4 +3,6 @@
 | Teams | ms-teams |
 | Microsoft Edge | msedge |
 | System Information | msinfo32 |
+| Devices and Printers| control printers |
+| Content Cell | Content Cell |
 | Content Cell | Content Cell |
