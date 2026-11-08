@@ -1,5 +1,6 @@
 | Program | Command |
 | ------------- | ------------- |
+| Applications |
 | Teams | ms-teams |
 | Microsoft Edge | msedge |
 | System Information | msinfo32 |
