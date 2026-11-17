@@ -1,5 +1,6 @@
+Turn off Focused and other sorting in Outlook
 
-Open Outlook 
+Open Outlook 365
 
 Select View > View Settings Settings icon (gear in top right of program).
 
