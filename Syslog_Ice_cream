@@ -1,13 +1,12 @@
 "Every Awesome Cisco Engineer will Need Ice Cream Daily"
 
 0 Emergency
-1 A
-2 C
+1 Alert
+2 Critical
 3 Error
 4 Warning
 5 Notifications
 6 Informational
 7 Debug
 
-Logging trap 7 - the number is all items at that number abd below in this
-example its everything
+Logging trap 7 - the number is all items at that number and others below it, trap 7 is 7 and everything less than it
