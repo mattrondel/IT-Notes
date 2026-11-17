@@ -1,8 +1,10 @@
 SSL cert expired on a site and are unable to access it (Common issue with SHB)
+On your keyboard type (not in anyfield) thisisunsafe
+For a permanent change:
 open regedit
 go to:
 HKEY Local Machine\Polices\Microsoft\Edge
 look for the key:
 SSLErrorOverrideAllowed
 change value to 1
-close and reopen Edge and try the site again the option 
+close and reopen Edge and try the site again the option
