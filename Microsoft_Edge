@@ -1,4 +1,4 @@
-(Common issue with SHB)
+SSL cert expired on a site and are unable to access it (Common issue with SHB)
 open regedit
 go to:
 HKEY Local Machine\Polices\Microsoft\Edge
