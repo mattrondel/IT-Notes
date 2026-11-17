@@ -4,7 +4,7 @@
 
 [Cyber Exchange](https://www.cyber.mil/)
 
-SDC and Secure Host Baseline (SHB) 
+SDC and Secure Host Baseline (SHB)
 
 Too Many Certs show up when you try to use your CAC?
 
@@ -18,6 +18,7 @@ Hamburger Menu> Settings > "Privacy & Security > Certificates -> View Certificat
 
 in Firefox they display it as the last 6 hex delete what you don't need/use
 
+---
 
 IL (or Isle as it sounds)
 
