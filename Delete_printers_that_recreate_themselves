@@ -1,0 +1,15 @@
+1. Right click on the desktop, create a new shortcut with target as 'cmd.exe'
+2. Right click on the shortcut, "Run as Administrator"
+3. Type: printui /s /t2 and press enter
+4. Try deleting the printers. If that doesn't work and ypu get an error
+5. Click Start > Run > type: services.msc and press enter
+6. Locate the Print Spooler service, and right click > properties > Stop Service
+7. Open my computer and browse to c:\Windows\System32\spool\Printers (you will need to say "OK" to get access to the folder)
+8. Delete the contents of that folder
+9. Restart the Print Spooler Service
+10. Go back into the printui utility (might need to restart it using the same method as above) and try removing printers again. This time it should work. If necessary, check the "ports" tab and remove and TCP/IP ports that are associated with the old printer
+11. (optional if it applies to you)Last but not least, remove all old mappings (shared printers )
+
+
+Special note:
+A printer cannot be removed unless all jobs are cleared
